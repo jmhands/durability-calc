@@ -28,6 +28,7 @@ A modern web application for calculating storage system durability across differ
 - **Validation**: Zod
 - **Charts**: Recharts
 - **Type Safety**: TypeScript
+- **Deployment**: Cloudflare Pages
 
 ## Getting Started
 
@@ -48,6 +49,35 @@ A modern web application for calculating storage system durability across differ
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment
+
+The application is configured for deployment to Cloudflare Pages. Follow these steps to deploy:
+
+1. Install Wrangler CLI if not already installed:
+   ```bash
+   pnpm add -g wrangler
+   ```
+
+2. Build the project:
+   ```bash
+   pnpm build
+   ```
+
+3. Deploy to Cloudflare Pages:
+   ```bash
+   wrangler pages deploy out --project-name durability-calc --branch main
+   ```
+
+4. Configure Production Branch (in Cloudflare Dashboard):
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
+   - Navigate to Pages > durability-calc project
+   - Go to Settings > Git Integration
+   - Set "Production branch" to "main"
+
+The deployment will be available at:
+- Production URL: https://production.durability-calc.pages.dev
+- Preview URL: https://[deployment-id].durability-calc.pages.dev
 
 ## Available Scripts
 

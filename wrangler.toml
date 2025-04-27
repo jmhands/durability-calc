@@ -12,6 +12,7 @@ pages_build_output_dir = "out"
 bucket = "out"
 
 [env.production]
+name = "durability-calc-production"
 routes = [
   { pattern = "/*", zone_name = "durability-calc.pages.dev" }
 ] 
