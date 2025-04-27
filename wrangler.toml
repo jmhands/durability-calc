@@ -1,0 +1,17 @@
+name = "durability-calc"
+compatibility_date = "2024-04-27"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+command = "pnpm install && pnpm build"
+
+[pages]
+pages_build_output_dir = "out"
+
+[site]
+bucket = "out"
+
+[env.production]
+routes = [
+  { pattern = "/*", zone_name = "durability-calc.pages.dev" }
+] 
